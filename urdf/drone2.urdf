@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot name="xwing">
+
+  <!-- Root link -->
+  <link name="world"/>
+
+
+
+
+
+
+  <!-- Robot 3 -->
+  <link name="xwing">
+    <visual>
+      <geometry>
+        <mesh filename="package://rviz_transformations/meshes/xwing36.stl" scale=".0005 .0005 .0005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="world_to_xwing" type="floating">
+    <parent link="world"/>
+    <child link="xwing"/>
+    <origin xyz="0 0 0" rpy="0 0 3.14"/> <!-- 1.5708 radians = 90 degrees -->
+  </joint>
+
+
+
+</robot>

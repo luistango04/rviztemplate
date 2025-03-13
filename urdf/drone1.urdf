@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<robot name="Telloextra">
+
+  <!-- Root link -->
+  <link name="world"/>
+
+
+  <!-- Tiramisu link -->
+  <link name="Telloextra"/>
+
+
+  <!-- Robot 3 -->
+  <link name="Tellobase">
+    <visual>
+      <geometry>
+        <mesh filename="package://rviz_transformations/meshes/xwing36.stl" scale=".0005 .0005 .0005"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="world_to_Telloextra" type="floating">
+    <parent link="world"/>
+    <child link="Telloextra"/>
+     <origin xyz="0 0 0" rpy="0 0 3.14"/> <!-- 1.5708 radians = 90 degrees -->
+  </joint>
+
+  <joint name="tiramisu_to_tiramisubaselink" type="fixed">
+    <parent link="Telloextra"/>
+    <child link="Tellobase"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+
+
+
+
+
+</robot>

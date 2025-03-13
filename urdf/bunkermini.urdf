@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="bunkermini">
+
+  <!-- Root link -->
+  <link name="world"/>
+
+
+
+
+  <link name="bunker_octo" />
+
+
+
+
+  <link name="bunker_mini">
+    <visual>
+      <geometry>
+        <mesh filename="package://rviz_transformations/meshes/xlsimple.stl" scale="1 1 1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+
+
+  <joint name="bunkerocto" type="floating">
+    <parent link="world"/>
+    <child link="bunker_octo"/>
+    <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+  </joint>
+
+
+
+  <joint name="octo_to_bunker_mini" type="fixed">
+    <parent link="bunker_octo"/>
+    <child link="bunker_mini"/>
+    <origin xyz="0 0 -0.25" rpy="0 0 0"/>
+  </joint>
+
+
+
+</robot>
